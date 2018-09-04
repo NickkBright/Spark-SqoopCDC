@@ -10,3 +10,9 @@ HDFS table needs to capture changes from the source RDB table. For example sourc
 2) We will store modified records in extract.parquet file 
 3) Using Spark SQL, create new table called modified-data.
 4) Using Spark SQL, insert unchanged data merged with modified data using LEFT JOIN
+
+## Requirements
+1) Installed Spark and Sqoop
+2) JDBC driver for Sqoop
+3) Running hadoop cluster
+4) Running spark-shell
