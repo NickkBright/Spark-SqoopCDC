@@ -16,3 +16,16 @@ HDFS table needs to capture changes from the source RDB table. For example sourc
 2) JDBC driver for Sqoop
 3) Running hadoop cluster
 4) Running spark-shell
+
+## Instruction for Sqoop data import
+Standart template for sqoop import:
+
+`sqoop import --connect <your jdbc driver with DB> --username <username> --password <password> -table <table name> --target-dir <path to HDFS directory>`
+
+Sqoop incremental import can capture both new and modified records. If we need to import new records, we need to add next parameter:
+
+`--check-column <name of column> --incremental append --last-value <value of the last record, that wasn't changed>`
+
+If we need to capture updates:
+
+`--check-column <name of column> --incremental lastmodified --last-value <value of the last record, that wasn't changed>`
