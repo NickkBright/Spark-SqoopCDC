@@ -20,7 +20,7 @@ HDFS table needs to capture changes from the source RDB table. For example sourc
 ## Instruction for Sqoop data import
 Standart template for sqoop import:
 
-`sqoop import --connect <your jdbc driver with DB> --username <username> --password <password> -table <table name> --target-dir <path to HDFS directory>`
+`sqoop import --connect <your jdbc driver with DB> --username <username> --password <password> --table <table name> --target-dir <path to HDFS directory>`
 
 Sqoop incremental import can capture both new and modified records. If we need to import new records, we need to add next parameter:
 
