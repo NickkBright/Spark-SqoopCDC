@@ -7,8 +7,8 @@ HDFS table needs to capture changes from the source RDB table. For example sourc
 
 ## Solution
 1) We're going to use Sqoop in incremental mode to import only those records that were modified
-2) We will store modified records in extract.parquet file 
-3) Using Spark SQL, create new table called modified-data.
+2) We will store modified records in parquet file 
+3) Using Spark SQL, create new tables: one for extracted data and another for updated original table.
 4) Using Spark SQL, insert unchanged data merged with modified data using LEFT JOIN
 
 ## Requirements
