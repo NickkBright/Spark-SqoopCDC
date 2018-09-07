@@ -2,6 +2,10 @@
 
 Change data capture realization using Spark and Sqoop
 
+[Sqoop documentation link](https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html)
+
+[Spark documentation link](https://spark.apache.org/docs/latest/)
+
 ## Problem
 HDFS table needs to capture changes from the source RDB table. For example source RDB table has 1 million records and half of them have been changed, so we need to synchronize changed records with our HDFS database.
 
