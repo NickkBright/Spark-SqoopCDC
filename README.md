@@ -33,9 +33,11 @@ If we need to capture updates:
 ## Using Sqoop job to simplify CDC
 We can save our incremental import command for multiple usage without specifying --last-value attribute. Example: 
 
-`sqoop job --import --connect` etc.
+`sqoop job --create MY_JOB_NAME --import --connect` etc.
 
-Sqoop will identify last-value attribute on first run and will change it if there will be larger value, so we don't need to specify it manually.
+Sqoop will identify last-value attribute on first run and will change it if there will be larger value, so we don't need to specify it manually. To execute job run
+
+`sqoop job --exec JOB_NAME`
 
 ## Using Spark for synchronization
 Let our original table be called Customers. After sqoop operation there will be parquet file with changed data. To make updated variant of original table, follow next steps.
